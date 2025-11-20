@@ -1,0 +1,37 @@
+ReactJS : framework front end js pour creer des UI 
+
+Vuejs Angular
+
+DOM
+
+html
+-head
+--meta
+--meta
+--title
+-body
+--form
+---div
+----label
+----input
+...
+
+js manipuler le DOM
+
+VDOM
+
+html
+-head
+--meta
+--meta
+--title
+-body
+--form
+---div
+----label
+----input
+...
+
+class 
+import export
+{} = objet
