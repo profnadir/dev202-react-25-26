@@ -1,0 +1,45 @@
+React 
+composant 
+
+array functions :
+
+map : const tab2 = tab.map(e => e.nom);
+
+filter : const tab2 = tab.filter(e => e.age>18);
+
+find : const elt = tab.find(e => e.name == "john")
+
+reduce ?
+
+spread operateur ... ? 
+
+mern stack ? 
+
+mongodb
+expressjs
+reactjs
+nodejs
+
+mean stack
+
+mongodb
+expressjs
+angular
+nodejs
+
+
+mevn stack
+
+mongodb
+expressjs
+vuejs
+nodejs
+
+typescript
+
+const a = 5;
+
+a = "nadir";
+
+laravel + reactjs/vuejs/angular
+
