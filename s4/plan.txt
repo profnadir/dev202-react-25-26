@@ -1,0 +1,17 @@
+npx create-react-app 01-hello-react
+cd 01-hello-react
+npm start
+
+npx ? npm install -g npx
+
+npm ? npm // nodejs(npm)
+
+nodejs ?
+
+
+outil => installer (npm) => excuete(npx)
+
+CRA : create-react-app
+
+
+vite ? 
