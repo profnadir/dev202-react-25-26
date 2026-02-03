@@ -13,19 +13,30 @@ function App() {
 
   const [userList, setUserList] = useState(users);
 
+  const [userToEdit, setUserToEdit] = useState(null);
+
   const handleSubmitApp = user => {
-    setUserList([...userList, { ...user, id: userList.length + 1 }]);
+    if(user.id){
+      setUserList([...userList.map(u => u.id == user.id ? {...user} : u)]);
+      setUserToEdit(null)
+    }else{
+      setUserList([...userList, { ...user, id: userList.length + 1 }]);
+    }
   }
 
   const handleDeleteApp = id => {
     setUserList([...userList.filter(u => u.id != id)])
   }
 
+  const handleEditApp = user => {
+    setUserToEdit(user);
+  }
+
   return (
     <>
-      <UserForm handleSubmitApp={handleSubmitApp}/>
+      <UserForm handleSubmitApp={handleSubmitApp} userToEdit={userToEdit}/>
       <hr />
-      <Users users={userList} handleDeleteApp={handleDeleteApp}/>
+      <Users users={userList} handleDeleteApp={handleDeleteApp} handleEditApp={handleEditApp}/>
     </>
   )
 }

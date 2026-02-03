@@ -1,26 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function UserForm({handleSubmitApp}) {
+export default function UserForm({handleSubmitApp, userToEdit}) {
 
     const [nom, setNom] = useState("");
     const [age, setAge] = useState("");
     const [email, setEmail] = useState("");
 
+    useEffect(()=>{
+        if(userToEdit){
+            setNom(userToEdit.nom);
+            setAge(userToEdit.age);
+            setEmail(userToEdit.email);
+        }
+    },[userToEdit])
+
     const handleSubmit = e => {
         e.preventDefault();
 
+        if(userToEdit){
+            
+            const userEdited = {
+                    id: userToEdit.id,
+                    nom: nom,
+                    age: age,
+                    email: email
+            }
+            handleSubmitApp(userEdited)
 
-        const newUser = {
-                nom: nom,
-                age: age,
-                email: email
+        }else{
+            const newUser = {
+                    nom: nom,
+                    age: age,
+                    email: email
+            }
+            handleSubmitApp(newUser)
         }
 
-        handleSubmitApp(newUser)
+
       
-
-
-
         setNom("");
         setAge("");
         setEmail("");
@@ -49,7 +66,7 @@ export default function UserForm({handleSubmitApp}) {
                         onChange={e => setEmail(e.target.value)} />
                 </div>
                 <button style={{ background: "blue", color: "white" }}>
-                    Ajouter
+                    {userToEdit ? "Modifier" : "Ajouter"}
                 </button>
             </form>
         </>

@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function Users({ users, handleDeleteApp }) {
+export default function Users({ users, handleDeleteApp, handleEditApp }) {
 
     const handleDelete = (id) => {
         handleDeleteApp(id)
+    }
+
+    const handleEdit = u => {
+        handleEditApp(u)
     }
 
     return (
@@ -29,6 +33,7 @@ export default function Users({ users, handleDeleteApp }) {
                                 <td>
                                     <button
                                         style={{ background: "orange" }}
+                                        onClick={() => handleEdit(u)}
                                     >Modifier</button>
                                     <button
                                         style={{ background: "red" }}
